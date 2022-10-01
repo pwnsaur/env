@@ -1,0 +1,19 @@
+[user]
+	name = Kaspars
+	email = 48859640+pwnsaur@users.noreply.github.com
+[color]
+	ui = auto
+[core]
+	editor = code --wait
+	excludesfile = /home/kaspars/.gitignore_global
+	autocrlf = input
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+[fetch]
+	prune = true
+[push]
+	autoSetupRemote = true
+[alias]
+  ci = commit -a
+  co = checkout
+  st = status -a
