@@ -6,6 +6,13 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 #atlas cli
 export fpath=(~/.zsh/functions $fpath)
 if [ -f ~/.zsh/functions/_atlas ]; then
@@ -29,13 +36,6 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-# bindings
-bindkey  "^[[H"  beginning-of-line
-bindkey  "^[[F"  end-of-line
-bindkey  "^[[3~" delete-char
-bindkey '^[[A'   history-beginning-search-backward
-bindkey '^[[B'   history-beginning-search-forward
-
 # aliases
 alias rm='rm -i'
 alias mkdir='mkdir -p'
@@ -45,6 +45,13 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias c='clear'
 alias ccd='clear && cd'
+
+# bindings
+bindkey  "^[[H"  beginning-of-line
+bindkey  "^[[F"  end-of-line
+bindkey  "^[[3~" delete-char
+bindkey '^[[A'   history-beginning-search-backward
+bindkey '^[[B'   history-beginning-search-forward
 
 # default editor
 export VISUAL=vim
